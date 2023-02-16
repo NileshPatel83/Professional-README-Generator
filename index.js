@@ -42,7 +42,7 @@ inquirer
         type: 'checkbox',
         name: 'technologiesUsed',
         message: 'Technologies Used:',
-        choices: getTechnologiesUsedList(constants.technologiesUsed),
+        choices: getTechnologyList(constants.technologiesUsed),
     },
     {
       type: 'input',
@@ -101,8 +101,55 @@ inquirer
         return;
     }
 
+    //Gets the list of used technologies as a string.
+    let technologiesUsed = getUsedTechnologyList(data);
+    if(technologiesUsed === null) return;
+
     //Create README File.
   }
+
+  //Gets the list of used technologies as a string.
+  function getUsedTechnologyList(data){
+
+    let technologiesUsed = '';
+
+    //Loops through selected technologies.
+    for (let i = 0; i < data.technologiesUsed.length; i++) {
+
+        //Gets the technology.
+        const technology = data.technologiesUsed[i];
+
+        //Gets the link of technology icon.
+        let link = getTechnologyIconLink(technology);
+        if(link === null) return null;
+
+        //Adds the technologies as a string with a new line character.
+        //Does not adds the new line character for last value.
+        if(i === data.technologiesUsed.length -1){
+            technologiesUsed += `![${technology}](${link})`;
+        } else {
+            technologiesUsed += `![${technology}](${link})\n`;
+        }
+    };
+
+    console.log(technologiesUsed);
+    return technologiesUsed;
+  }
+
+  //Gets the link of technology icon.
+ function getTechnologyIconLink(techSelected){
+
+    //Loop through all technology list to find the icon link of selected technology.
+    for (let i = 0; i < constants.technologiesUsed.length; i++) {
+
+        const technology = constants.technologiesUsed[i];
+
+        if(techSelected === technology.heading) return technology.link;
+    };
+
+    //Returns null if fails to find the selected technology in all technology list.
+    return null;
+ }
 
   //Validate the user input data.
   //Returns the list of keys which value is not assigned.
@@ -133,10 +180,10 @@ inquirer
   }
 
   //Gets the list of technology headings/names from the array in constant module.
-  function getTechnologiesUsedList(madeWith){
+  function getTechnologyList(technologiesUsed){
     let techList = [];
 
-    madeWith.forEach(technology => {
+    technologiesUsed.forEach(technology => {
         techList.push(technology.heading);
     });
 
