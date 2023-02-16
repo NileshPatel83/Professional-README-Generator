@@ -42,7 +42,7 @@ ${deployment}
 ${screenshots}
 
 ## License
-The project is licensed under the ${license} license.
+The project is licensed under: ${license}.
 
 ## Contribution
 ${contribution}
@@ -51,4 +51,5 @@ ${contribution}
 If you have any questions about the repository, open an issue or contact me directly at ${email}. You can find more of my work at ${gitHub}.
 `;
 
+//Exports this constant to be used in index.js file.
 module.exports = {generateREADME};
