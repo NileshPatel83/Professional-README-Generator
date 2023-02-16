@@ -188,7 +188,9 @@ inquirer
 
       //Gets relative path using assets folder name.
       imagePath = imagePath.substring(imagePath.indexOf(constants.assetFolerName));
-      imagePath = imagePath.replace(constants.filePathBackSlash, constants.filePathForwardSlash);
+
+      //Replaces back slashes with forward slashes for image path.
+      imagePath = imagePath.split(constants.filePathBackSlash).join(constants.filePathForwardSlash);
 
       //Gets the image file name from relative image path.
       let imageFileName = imagePath.substring(imagePath.lastIndexOf(constants.filePathForwardSlash) + 1);

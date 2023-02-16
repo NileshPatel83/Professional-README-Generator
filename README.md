@@ -37,14 +37,13 @@ Command-line application that accepts user inputs and prompts information about 
 ## Installation
 To install necessary dependencies, run the following command:
 ```
-npm i
-npm i inquirer
+N/A
 ```
 
 ## Tests
 To run tests, run the following command:
 ```
-npm test
+N/A
 ```
 
 ## Deployment
@@ -53,11 +52,11 @@ N/A
 ## Screenshots
 User input
 
-![images\UserInput](assets/images\UserInput.png)
+![UserInput](assets/images/UserInput.png)
 
 README generated
 
-![images\ReadmeGenerated](assets/images\ReadmeGenerated.png)
+![ReadmeGenerated](assets/images/ReadmeGenerated.png)
 
 ## License
 The project is licensed under: MIT.
