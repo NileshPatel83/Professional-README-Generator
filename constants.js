@@ -33,6 +33,8 @@ const lessThanChar = '<';
 //Assets folder name will be used to get relative path of screenshot image.
 const assetFolerName = 'assets';
 
+const githubLink = 'https://github.com/';
+
 //String array containing GitHub licenses.
 const githubLicenses = ['Apache 2.0', 'BSD 3', 'GPL 3.0', 'MIT', 'None'];
 
@@ -126,6 +128,7 @@ module.exports = {
     greaterThanChar, 
     lessThanChar,
     assetFolerName,
+    githubLink,
     githubLicenses, 
     technologiesUsed
 };

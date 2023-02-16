@@ -137,7 +137,12 @@ inquirer
       data.screenshots = screenshotInfo;
     }
 
+    //Sets url for GitHub using user name.
+    data.gitHubUserName = `[${data.gitHubUserName}](${constants.githubLink}/${data.gitHubUserName})`;
+
     //Create README File.
+    const readmeText = readmeTemplace.generateREADME(data);
+
   }
 
   //Gets screenshot information.
