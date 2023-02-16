@@ -117,6 +117,13 @@ inquirer
     let usage = `\n${constants.pointChar}` + data.usage.split(constants.semicolonChar).join(`\n${constants.pointChar}`);
     data.usage = usage;
 
+    //Repalces semicolon with new line character for installation commands.
+    let installation = data.installation.split(constants.semicolonChar).join(`\n`);
+    data.installation = installation;
+
+    //Repalces semicolon with new line character for test commands.
+    let tests = data.tests.split(constants.semicolonChar).join(`\n`);
+    data.tests = tests;
 
 
 
