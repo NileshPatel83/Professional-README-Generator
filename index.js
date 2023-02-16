@@ -188,9 +188,10 @@ inquirer
 
       //Gets relative path using assets folder name.
       imagePath = imagePath.substring(imagePath.indexOf(constants.assetFolerName));
+      imagePath = imagePath.replace(constants.filePathBackSlash, constants.filePathForwardSlash);
 
       //Gets the image file name from relative image path.
-      let imageFileName = imagePath.substring(imagePath.lastIndexOf('\\') + 1);
+      let imageFileName = imagePath.substring(imagePath.lastIndexOf(constants.filePathForwardSlash) + 1);
       imageFileName = imageFileName.substring(0, imageFileName.indexOf('.'));
 
       //Adds description, image file name and image file path to create the sceenshot information.

@@ -53,11 +53,11 @@ N/A
 ## Screenshots
 User input
 
-![UserInput](assets\images\UserInput.png)
+![images\UserInput](assets/images\UserInput.png)
 
 README generated
 
-![ReadmeGenerated](assets\images\ReadmeGenerated.png)
+![images\ReadmeGenerated](assets/images\ReadmeGenerated.png)
 
 ## License
 The project is licensed under: MIT.

@@ -35,6 +35,10 @@ const assetFolerName = 'assets';
 
 const githubLink = 'https://github.com/';
 
+const filePathBackSlash = '\\';
+
+const filePathForwardSlash = '/';
+
 //String array containing GitHub licenses.
 const githubLicenses = ['Apache 2.0', 'BSD 3', 'GPL 3.0', 'MIT', 'None'];
 
@@ -129,6 +133,8 @@ module.exports = {
     lessThanChar,
     assetFolerName,
     githubLink,
+    filePathBackSlash,
+    filePathForwardSlash,
     githubLicenses, 
     technologiesUsed
 };
