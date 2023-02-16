@@ -102,11 +102,24 @@ inquirer
     }
 
     //Repalces space with %20 for license icon link.
+    //Replaces inputs value with new value.
     let license = data.license.replace(constants.spaceChar, constants.linkSpace);
+    data.license = license;
 
     //Gets the list of used technologies as a string.
+    //Replaces inputs value with new value.
     let technologiesUsed = getUsedTechnologyList(data);
     if(technologiesUsed === null) return;
+    data.technologiesUsed = technologiesUsed;
+
+    //Replaces semicolon for all newlines with new line character and '-' to add bullet point in README file.
+    //Also adds new line character and '-' to add bullet point for the first line.
+    let usage = `\n${constants.pointChar}` + data.usage.split(constants.semicolonChar).join(`\n${constants.pointChar}`);
+    data.usage = usage;
+
+
+
+
 
     //Create README File.
   }
