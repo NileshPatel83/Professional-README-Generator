@@ -1,5 +1,5 @@
 //Contents to generate README file using parameters provided.
-const generateREADME = ({title, license, madeWith, description, usage, installation, tests, deployment, screenshots, contribution, gitHub, email}) =>
+const generateREADME = ({title, license, madeWith, description, usage, installation, tests, deployment, screenshots, contribution, gitHubUserName, userEmail}) =>
 `
 # ${title}
 
@@ -48,7 +48,7 @@ The project is licensed under: ${license}.
 ${contribution}
 
 ## Questions
-If you have any questions about the repository, open an issue or contact me directly at ${email}. You can find more of my work at ${gitHub}.
+If you have any questions about the repository, open an issue or contact me directly at ${userEmail}. You can find more of my work at ${gitHubUserName}.
 `;
 
 //Exports this constant to be used in index.js file.
