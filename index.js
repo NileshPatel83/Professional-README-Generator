@@ -107,8 +107,19 @@ inquirer
     //Converts the data into readme template text.
     const readmeText = updateDataForREADMETemplate(data);
 
-    //Create README File.
+    //Creates README File.
+    generateREADMEFile(readmeText, data.readmeFilePath);
+  }
 
+  //Creates README File.
+  function generateREADMEFile(readmeText, readmeFilePath){
+
+    readmeFilePath = `${readmeFilePath}/${constants.readmeFileName}`;
+
+    //Creates the readme file.
+    fs.writeFile(readmeFilePath, readmeText, (err) =>
+      err ? console.error(err) : console.log('README file created successfully!')
+    );
   }
 
   //Converts the data into readme template text.
@@ -127,7 +138,7 @@ inquirer
 
     //Replaces semicolon for all newlines with new line character and '-' to add bullet point in README file.
     //Also adds new line character and '-' to add bullet point for the first line.
-    let usage = `\n${constants.pointChar}` + data.usage.split(constants.semicolonChar).join(`\n${constants.pointChar}`);
+    let usage = `\n${constants.pointChar} ` + data.usage.split(constants.semicolonChar).join(`\n${constants.pointChar} `);
     data.usage = usage;
 
     //Repalces semicolon with new line character for installation commands.
