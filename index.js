@@ -4,7 +4,7 @@ const constants = require('./constants.js');
 //Variable to access generateREADME method from readme-template module.
 const readmeTemplace = require('./readme-template.js');
 
-//Variable to access inquirere module methods.
+//Variable to access inquirer module methods.
 const inquirer = require('inquirer');
 
 //Variable to access file system module methods.
@@ -42,12 +42,12 @@ inquirer
         type: 'checkbox',
         name: 'madeWith',
         message: 'Technologies Used:',
-        choices: constants.madeWith,
+        choices: getTechnologiesUsedList(constants.madeWith),
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'Project Usage:',
+      message: 'Project Usage (Separate multiple lines with semicolon):',
     },
     {
         type: 'input',
@@ -69,12 +69,17 @@ inquirer
       {
         type: 'input',
         name: 'screenshots',
-        message: 'Screenshots:',
+        message: 'Screenshots <Description-ImagePath> (Separate multiple lines with semicolon):',
       },
       {
         type: 'input',
         name: 'contribution',
         message: 'Contribution:',
+      },
+      {
+        type: 'input',
+        name: 'readmeFilePath',
+        message: 'Location to save README file:',
       },
   ])
   .then((response) => CreateREADMEFile(response));
@@ -86,4 +91,14 @@ inquirer
     //Validate the data.
 
     //Create README File.
+  }
+
+  function getTechnologiesUsedList(madeWith){
+    let techList = [];
+
+    madeWith.forEach(technology => {
+        techList.push(technology.heading);
+    });
+
+    return techList;
   }

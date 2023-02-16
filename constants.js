@@ -1,3 +1,6 @@
+//Readme file name with file extension.
+const readmeFileName = 'README.md';
+
 //If project is deployed, this message will be used alogn with the deployed project URL.
 const deploymentMessage = 'Deployed webpage:';
 
@@ -99,4 +102,15 @@ const madeWith = [
 ];
 
 //Exports these constants to be used in index.js file.
-module.exports = {deploymentMessage, defaultContributionMessage, notApplicable, pointChar, spaceChar, semicolonChar, linkSpace, githubLicenses, madeWith};
+module.exports = {
+    readmeFileName,
+    deploymentMessage,
+    defaultContributionMessage, 
+    notApplicable, 
+    pointChar, 
+    spaceChar, 
+    semicolonChar, 
+    linkSpace, 
+    githubLicenses, 
+    madeWith
+};
