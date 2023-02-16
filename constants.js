@@ -26,7 +26,7 @@ const linkSpace = '%20';
 const githubLicenses = ['Apache 2.0', 'BSD 3', 'GPL 3.0', 'MIT', 'None'];
 
 //Array containing heading and URL for made with icons.
-const madeWith = [
+const technologiesUsed = [
     {
         heading: 'Angular',
         link: 'https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white'
@@ -112,5 +112,5 @@ module.exports = {
     semicolonChar, 
     linkSpace, 
     githubLicenses, 
-    madeWith
+    technologiesUsed
 };

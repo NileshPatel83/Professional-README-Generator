@@ -1,11 +1,11 @@
 //Contents to generate README file using parameters provided.
-const generateREADME = ({title, license, madeWith, description, usage, installation, tests, deployment, screenshots, contribution, gitHubUserName, userEmail}) =>
+const generateREADME = ({title, license, technologiesUsed, description, usage, installation, tests, deployment, screenshots, contribution, gitHubUserName, userEmail}) =>
 `
 # ${title}
 
 ![${license} License](https://img.shields.io/badge/license-${license}-blue.svg)
 
-${madeWith}
+${technologiesUsed}
 
 ## Description
 ${description}
