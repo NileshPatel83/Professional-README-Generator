@@ -19,14 +19,27 @@ const spaceChar = ' ';
 //Semicolon
 const semicolonChar = ';';
 
+//Colon
+//This will be used to separate description and image path in screenshot section.
+const doubleColonChar = '::';
+
 //If there is a space in link, it will be replace by following string.
 const linkSpace = '%20';
+
+const greaterThanChar = '>';
+
+const lessThanChar = '<';
+
+//Assets folder name will be used to get relative path of screenshot image.
+const assetFolerName = 'assets';
+
+const githubLink = 'https://github.com/';
 
 //String array containing GitHub licenses.
 const githubLicenses = ['Apache 2.0', 'BSD 3', 'GPL 3.0', 'MIT', 'None'];
 
 //Array containing heading and URL for made with icons.
-const madeWith = [
+const technologiesUsed = [
     {
         heading: 'Angular',
         link: 'https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white'
@@ -110,7 +123,12 @@ module.exports = {
     pointChar, 
     spaceChar, 
     semicolonChar, 
+    doubleColonChar,
     linkSpace, 
+    greaterThanChar, 
+    lessThanChar,
+    assetFolerName,
+    githubLink,
     githubLicenses, 
-    madeWith
+    technologiesUsed
 };
