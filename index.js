@@ -104,6 +104,16 @@ inquirer
         return;
     }
 
+    //Converts the data into readme template text.
+    const readmeText = updateDataForREADMETemplate(data);
+
+    //Create README File.
+
+  }
+
+  //Converts the data into readme template text.
+  function updateDataForREADMETemplate(data){
+
     //Repalces space with %20 for license icon link.
     //Replaces inputs value with new value.
     let license = data.license.replace(constants.spaceChar, constants.linkSpace);
@@ -140,9 +150,8 @@ inquirer
     //Sets url for GitHub using user name.
     data.gitHubUserName = `[${data.gitHubUserName}](${constants.githubLink}/${data.gitHubUserName})`;
 
-    //Create README File.
-    const readmeText = readmeTemplace.generateREADME(data);
-
+    //Create README File text.
+    return readmeTemplace.generateREADME(data);
   }
 
   //Gets screenshot information.
