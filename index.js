@@ -101,6 +101,9 @@ inquirer
         return;
     }
 
+    //Repalces space with %20 for license icon link.
+    let license = data.license.replace(constants.spaceChar, constants.linkSpace);
+
     //Gets the list of used technologies as a string.
     let technologiesUsed = getUsedTechnologyList(data);
     if(technologiesUsed === null) return;
@@ -132,7 +135,6 @@ inquirer
         }
     };
 
-    console.log(technologiesUsed);
     return technologiesUsed;
   }
 
