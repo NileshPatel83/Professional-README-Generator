@@ -52,19 +52,19 @@ inquirer
     {
         type: 'input',
         name: 'installation',
-        message: 'Installation Dependencies:',
+        message: 'Installation Dependencies (Separate multiple lines with semicolon):',
         default: constants.notApplicable,
       },
       {
         type: 'input',
         name: 'tests',
-        message: 'Tests:',
+        message: 'Tests (Separate multiple lines with semicolon):',
         default: constants.notApplicable,
       },
       {
         type: 'input',
         name: 'deployment',
-        message: 'Deployment:',
+        message: 'Deployment URL:',
       },
       {
         type: 'input',
