@@ -19,8 +19,19 @@ const spaceChar = ' ';
 //Semicolon
 const semicolonChar = ';';
 
+//Colon
+//This will be used to separate description and image path in screenshot section.
+const doubleColonChar = '::';
+
 //If there is a space in link, it will be replace by following string.
 const linkSpace = '%20';
+
+const greaterThanChar = '>';
+
+const lessThanChar = '<';
+
+//Assets folder name will be used to get relative path of screenshot image.
+const assetFolerName = 'assets';
 
 //String array containing GitHub licenses.
 const githubLicenses = ['Apache 2.0', 'BSD 3', 'GPL 3.0', 'MIT', 'None'];
@@ -110,7 +121,11 @@ module.exports = {
     pointChar, 
     spaceChar, 
     semicolonChar, 
+    doubleColonChar,
     linkSpace, 
+    greaterThanChar, 
+    lessThanChar,
+    assetFolerName,
     githubLicenses, 
     technologiesUsed
 };

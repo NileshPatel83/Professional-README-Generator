@@ -65,16 +65,19 @@ inquirer
         type: 'input',
         name: 'deployment',
         message: 'Deployment URL:',
+        default: constants.notApplicable,
       },
       {
         type: 'input',
         name: 'screenshots',
-        message: 'Screenshots <Description-ImagePath> (Separate multiple lines with semicolon):',
+        message: 'Screenshots <Description::ImagePath> (Separate multiple lines with semicolon):',
+        default: constants.notApplicable,
       },
       {
         type: 'input',
         name: 'contribution',
         message: 'Contribution:',
+        default: constants.defaultContributionMessage,
       },
       {
         type: 'input',
@@ -125,10 +128,55 @@ inquirer
     let tests = data.tests.split(constants.semicolonChar).join(`\n`);
     data.tests = tests;
 
+    //If deployment link is not N/A then sets deployment message.
+    if(data.deployment !== constants.notApplicable) data.deployment = constants.deploymentMessage + data.deployment;
 
-
+    //Gets screenshot information.
+    if(data.screenshots !== constants.notApplicable){
+      let screenshotInfo = getScreenshotInformation(data.screenshots);
+      data.screenshots = screenshotInfo;
+    }
 
     //Create README File.
+  }
+
+  //Gets screenshot information.
+  function getScreenshotInformation(screenshots){
+
+    let screenshotInfo = '';
+
+    //Gets the array of each screenshot information.
+    let screenshotArray = screenshots.split(constants.semicolonChar);
+
+    for (let i = 0; i < screenshotArray.length; i++){
+
+      let screenshot = screenshotArray[i];
+
+      //Gets the array where first element is description and second is image path.
+      let screenshotElements =  screenshot.split(constants.doubleColonChar);
+
+      //Removes less than character from description.
+      let description = screenshotElements[0].replace(constants.lessThanChar, '');
+
+      //Removes greater than character from image path.
+      let imagePath = screenshotElements[1].replace(constants.greaterThanChar, '');
+
+      //Gets relative path using assets folder name.
+      imagePath = imagePath.substring(imagePath.indexOf(constants.assetFolerName));
+
+      //Gets the image file name from relative image path.
+      let imageFileName = imagePath.substring(imagePath.lastIndexOf('\\') + 1);
+      imageFileName = imageFileName.substring(0, imageFileName.indexOf('.'));
+
+      //Adds description, image file name and image file path to create the sceenshot information.
+      if(i === screenshotArray.length -1){
+        screenshotInfo += `${description}\n\n![${imageFileName}](${imagePath})`;
+      } else {
+        screenshotInfo += `${description}\n\n![${imageFileName}](${imagePath})\n\n`;
+      }
+    };
+
+    return screenshotInfo;
   }
 
   //Gets the list of used technologies as a string.
